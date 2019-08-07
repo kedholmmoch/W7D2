@@ -1,0 +1,7 @@
+<h2>Sign Up!</h2>
+
+<%= render partial: 'layouts/errors'%>
+
+<%= render 'form', user: @user %>
+
+<h3>Already a User? <a href="<%= new_session_url %>">Log In</a></h3>

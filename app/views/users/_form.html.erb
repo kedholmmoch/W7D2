@@ -1,0 +1,19 @@
+<% action = user.persisted? ? user_url(url) : users_url %>
+<% method = user.persisted? ? "patch" : "post" %>
+<% message = user.persisted? ? "Update User" : "Create User" %>
+
+<form action="<%= action %>" method='post'>
+  <input type="hidden" name="_method" value="<%= method %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label for="email">Email:</label>
+  <input id="email" name="user[email]" type="text">
+  <br>
+
+  <label for="password">Password (must be at least six characters):</label>
+  <input id="password" name="user[password]" type="password">
+  <br>
+
+  <input type="submit" value="<%= message %>">
+
+</form>
